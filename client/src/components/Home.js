@@ -1,9 +1,10 @@
-import React from "react";
+
+import React from 'react';
 
 const Home = () => {
   return (
     <div>
-      <h1>Pizza App</h1>
+      <h1>Here are our pizzas</h1>
     </div>
   );
 };

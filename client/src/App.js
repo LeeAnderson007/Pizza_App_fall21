@@ -1,24 +1,32 @@
-import logo from './logo.svg';
+import React from "react";
 import './App.css';
+import { Container } from "semantic-ui-react";
+import Navbar from "./components/Navbar";
+import { Switch, Route } from 'react-router-dom';
+import Topping from "./components/Topping";
+import Toppings from "./components/Toppings";
+import PizzaEdit from "./components/PizzaEdit";
+import Home from "./components/Home";
+import Pizzas from "./components/Pizzas";
+import PizzaNew from "./components/PizzaNew";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <Navbar />
+        <Container>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/pizzas" component={Pizzas} />
+            <Route exact path="/pizzas/new" component={PizzaNew} />
+            <Route exact path="/pizzas/:id" component={PizzaEdit} />
+            <Route exact path="/pizzas/:id/edit" component={PizzaEdit} />
+            <Route exact path="/pizzas/:id/toppings" component={Toppings} />
+            <Route exact path="/pizzas/:id/toppings/:id" component={Topping} />
+          </Switch>
+        </Container>  
+    </>
   );
 }
 

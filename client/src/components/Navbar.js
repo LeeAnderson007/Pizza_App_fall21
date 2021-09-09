@@ -1,12 +1,17 @@
+import { Link } from "react-router-dom";
+import { Menu } from "semantic-ui-react";
 
-import React from 'react';
-
-const Navbar = () => {
+const NavBar = () => {
   return (
-    <div>
-      <h1>Here are our pizzas</h1>
-    </div>
+    <Menu>
+      <Link to="/">
+        <Menu.Item>Home</Menu.Item>
+      </Link>
+      <Link to="/pizzas">
+        <Menu.Item>Pizzas</Menu.Item>
+      </Link>
+    </Menu>
   );
 };
 
-export default Navbar;
+export default NavBar;

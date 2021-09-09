@@ -3,6 +3,7 @@ import './App.css';
 import { Container } from "semantic-ui-react";
 import Navbar from "./components/Navbar";
 import { Switch, Route } from 'react-router-dom';
+
 import Pizzas from "./components/Pizzas";
 import Home from "./components/Home";
 import PizzaNew from "./components/PizzaNew";
@@ -12,9 +13,11 @@ import Topping from "./components/Topping";
 import Toppings from "./components/Toppings";
 
 
+
 function App() {
   return (
     <>
+
       <Navbar />
       <Container>
         <Switch>

@@ -50,4 +50,5 @@ const Pizzas = () => {
     </div>
   );
 };
+
 export default Pizzas;

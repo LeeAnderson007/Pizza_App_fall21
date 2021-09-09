@@ -1,5 +1,4 @@
-class Api::PizzasController < ApplicationController
-    class Api::PizzasController < ApplicationController
+  class Api::PizzasController < ApplicationController
         before_action :set_pizza, only: [:update, :show, :destroy]
       
         def index
@@ -39,3 +38,4 @@ class Api::PizzasController < ApplicationController
           params.require(:pizza).permit(:name, :description, :price)
         end
       end
+

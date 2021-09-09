@@ -1,11 +1,12 @@
-import React from "react";
 
-const Pizzas = () => {
-    return (
-        <div>
-            <h1> Here are our Pizzas</h1>
-        </div>
-    );
+import React from 'react';
+
+const Pizza = () => {
+  return (
+    <div>
+      <h1>Pizza</h1>
+    </div>
+  );
 };
 
-export default Pizzas;
+export default Pizza;

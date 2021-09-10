@@ -1,8 +1,8 @@
-
-import React, {useState, useEffect} from 'react';
-import axios from "axios";
+import React, {useState, useEffect} from 'react';
+import axios from "axios";
 import { Button, Card, Icon, Popup } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
+
 
 const Toppings = (props) => {
   const [toppings, setToppings] = useState([]);
@@ -29,10 +29,11 @@ const Toppings = (props) => {
     }
   };
 
-  const renderToppings = () => {
-    return toppings.map((t) => {
-      return (
-        <Card>
+  const renderToppings = () => {
+    return toppings.map((t) => {
+      return (
+        <Card>
+
           <Card.Content header={t.name} />
           <Card.Content header={t.category} />
           <Button.Group basic centered vertical>
@@ -48,12 +49,13 @@ const Toppings = (props) => {
             </Button.Group>
           </Button.Group>
         </Card>
-      );
-    });
-  };
 
-  return (
-    <div>
+      );
+    });
+  };
+
+  return (
+    <div>
       <h1>Toppings</h1>
       <Link to={`/pizzas`}>
         <Popup content='Go Back' trigger={<Button icon="angle left" color="blue" />} />

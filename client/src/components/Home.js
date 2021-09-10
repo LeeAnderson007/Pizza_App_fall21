@@ -1,13 +1,22 @@
-
 import React from 'react';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Pandemic Pizza </h1>
-      <h3>Eat Those Feelings Under the Table!</h3>
+    <div style={styles.presentation}>
+      <br/>
+      <h1>Pandemic Pizzas</h1>
     </div>
   );
 };
 
+const styles = {
+  presentation: {
+    paddingBottom: "20px",
+    display: "flex",
+    textAlign: "center",
+    alignContent: "flex-start",
+    justifyItems: "flex-start",
+    flexDirection: "column",
+  },
+};
 export default Home;

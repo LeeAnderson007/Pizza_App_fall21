@@ -19,14 +19,15 @@ const Toppings = (props) => {
     }
   };
 
-const deleteTopping = async (id) => {
-  try {
-    let res = await axios.delete(`/api/toppings/${id}`);
-    setToppings(toppings.filter((t) => t.id !== id));
-  } catch (err) {
-    console.log(err);
-  }
-};
+  const deleteTopping = async (id) => {
+    try {
+      let res = await axios.delete(`/api/toppings/${id}`);
+      setToppings(toppings.filter((t) => t.id !== id));
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
 
   const renderToppings = () => {
     return toppings.map((t) => {
@@ -64,4 +65,4 @@ const deleteTopping = async (id) => {
     </div>
   );
 };
-export default Toppings;
+export default Toppings;

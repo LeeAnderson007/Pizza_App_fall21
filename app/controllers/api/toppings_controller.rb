@@ -1,9 +1,9 @@
 class Api::ToppingsController < ApplicationController
     before_action :set_pizza
-  before_action :set_topping, only: [:update, :destroy]
+    before_action :set_topping, only: [:update, :destroy]
 
   def index
-    render json: @pizza.toppings
+    render json: {piza: @pizza, toppings:@pizza.toppings}
   end
 
   def show

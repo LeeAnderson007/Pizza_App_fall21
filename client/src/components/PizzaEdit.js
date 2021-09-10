@@ -90,9 +90,3 @@ return (
 };
 
 export default PizzaEdit;
-
-//hi
-// lee
-
-// wht
-// sydney

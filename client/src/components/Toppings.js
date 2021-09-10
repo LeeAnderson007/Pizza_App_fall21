@@ -3,21 +3,22 @@ import axios from "axios";
 import { Button, Card, Icon, Popup } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 
-const Toppings = (props) => {
-  const [toppings, setToppings] = useState([]);
 
-  useEffect(() => {
-    getToppings();
-  }, []);
+const Toppings = (props) => {
+  const [toppings, setToppings] = useState([]);
 
-  const getToppings = async () => {
-    try {
-      let res = await axios.get(`/api/pizzas/${props.match.params.id}/toppings`);  //(`/api//pizza/toppings`);
-      setToppings(res.data);
-    } catch (err) {
-      console.log(err);
-    }
-  };
+  useEffect(() => {
+    getToppings();
+  }, []);
+
+  const getToppings = async () => {
+    try {
+      let res = await axios.get(`/api/pizzas/${props.match.params.id}/toppings`);  //(`/api//pizza/toppings`);
+      setToppings(res.data.toppings);
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   const deleteTopping = async (id) => {
     try {
@@ -32,6 +33,7 @@ const Toppings = (props) => {
     return toppings.map((t) => {
       return (
         <Card>
+
           <Card.Content header={t.name} />
           <Card.Content header={t.category} />
           <Button.Group basic centered vertical>
@@ -47,6 +49,7 @@ const Toppings = (props) => {
             </Button.Group>
           </Button.Group>
         </Card>
+
       );
     });
   };
@@ -60,7 +63,7 @@ const Toppings = (props) => {
       <br />
       <br />
       <Card.Group>{renderToppings()}</Card.Group>
-    </div>
-  );
+    </div>
+  );
 };
 export default Toppings;

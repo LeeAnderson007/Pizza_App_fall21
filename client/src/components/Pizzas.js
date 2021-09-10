@@ -76,3 +76,6 @@ const Pizzas = () => {
 
 export default Pizzas;
 
+// <Link to={`/pizzas/${p.id}/toppings`}>
+{/* <Button icon="pencil" color="blue" />
+</Link> */}

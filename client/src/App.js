@@ -2,7 +2,7 @@ import React from "react";
 import './App.css';
 import { Container } from "semantic-ui-react";
 import Navbar from "./components/Navbar";
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router';
 
 import Pizzas from "./components/Pizzas";
 import Home from "./components/Home";

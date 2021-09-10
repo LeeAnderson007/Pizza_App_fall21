@@ -1,5 +1,5 @@
   class Api::PizzasController < ApplicationController
-        before_action :set_pizza, only: [:update, :show, :destroy]
+        before_action :set_pizza, only: [:show,:update, :destroy]
       
         def index
           render json: Pizza.all

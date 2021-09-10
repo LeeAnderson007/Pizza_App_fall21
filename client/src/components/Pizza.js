@@ -11,9 +11,6 @@ const Pizza = (props) => {
       <Link to={`/pizzas`}>
         <Popup content='Go Back' trigger={<Button icon="angle left" color="blue" />} />
       </Link>
-      {/* <Link to={`/pizzas/${p.id}/toppings`}>
-      <Popup content='Go Back' trigger={<Button icon="angle left" color="blue" />} />
-      </Link> */}
       <p>id: {props.match.params.id}</p>
       </Button.Group>
     </div>

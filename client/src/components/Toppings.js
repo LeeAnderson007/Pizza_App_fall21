@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from "axios";
-import { Button, Card, Icon } from 'semantic-ui-react';
+import { Button, Card, Icon, Popup } from 'semantic-ui-react';
 import { Link } from "react-router-dom";
 
 const Toppings = (props) => {
@@ -19,7 +19,6 @@ const Toppings = (props) => {
     }
   };
 
-
 const deleteTopping = async (id) => {
   try {
     let res = await axios.delete(`/api/toppings/${id}`);
@@ -34,15 +33,18 @@ const deleteTopping = async (id) => {
       return (
           <Card>
             <Card.Content header={t.name} />
-            <Card.Content extra>{t.category}</Card.Content>
-            <Button.Group>
+            <Card.Content header={t.category} />
+            <Button.Group basic centered vertical>
               <Link to={`/toppings/${t.id}/edit`}>
-                <Button color="blue">Add</Button>
+                <Button icon>
+                  <Popup content='Add' trigger={<Icon name="edit" color="blue" />} />
+                </Button>
               </Link>
-
-              <Button color="red" onClick={() => deleteTopping(t.id)}>
-                Remove
-              </Button>
+              <Button.Group>
+                <Button icon>
+                  <Popup content='Delete' trigger={<Icon name='trash' color="red" background="red" onClick={() => deleteTopping(t.id)} />} />
+                </Button>
+              </Button.Group>
             </Button.Group>
           </Card>
       );
@@ -52,6 +54,12 @@ const deleteTopping = async (id) => {
 
   return (
     <div>
+      <h1>Toppings</h1>
+      <Link to={`/pizzas`}>
+        <Popup content='Go Back' trigger={<Button icon="angle left" color="blue" />} />
+      </Link>
+      <br />
+      <br />
       <Card.Group>{renderToppings()}</Card.Group>
     </div>
   );

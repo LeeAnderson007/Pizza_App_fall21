@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Button, Popup } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
 const PizzaNew = (props) => {
   const [name, setName] = useState("")
@@ -22,26 +24,29 @@ const handleSubmit = async (e) => {
   return (
       <>
     <form onSubmit={handleSubmit}>
-      <div onClick={() => props.history.goBack()}>Back</div>
       <h1>Create a new pizza</h1>
+      <Link to={`/pizzas`}>
+        <Popup content='Go Back' trigger={<Button icon="angle left" color="blue" />} />
+      </Link>
+      {/* <div onClick={() => props.history.goBack()}>Back</div> */}
        {error && <p style={{ color: "red" }}>Error Occurred</p>}
         <div class="ui inverted segment">
         <div class="ui inverted form">
           <div class="two fields">
             <div class="field">
-              <label>Pizza Name</label>
-              <input value={name} onChange={(e)=> setName(e.target.value)} placeholder="Pizza Name" type="text" />
+              <label>Name:</label>
+              <input value={name} onChange={(e)=> setName(e.target.value)} placeholder="Name" type="text" />
             </div>
             <div class="field">
-              <label>Price</label>
+              <label>Price:</label>
               <input value={price} onChange={(e)=> setPrice(e.target.value) } placeholder="Price" type="text" />
             </div>
             <div class="field">
-              <label>Description</label>
+              <label>Description:</label>
               <input value={description} onChange={(e)=> setDescription(e.target.value) } placeholder="Description" type="text" />
             </div>
           </div>
-          <div class="ui submit button"><button style={{border:"none"}} type={'submit'}>Add Pizza</button></div>
+          <div><Button class="ui button" inverted color='blue' type={'submit'}>Add Pizza</Button></div>
         </div>
       </div>
     </form>

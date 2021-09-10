@@ -4,7 +4,7 @@ const Home = () => {
   return (
     <div style={styles.presentation}>
       <br/>
-      <h1>Here are our pizzas</h1>
+      <h1>Pandemic Pizzas</h1>
     </div>
   );
 };

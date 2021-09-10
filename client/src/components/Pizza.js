@@ -9,7 +9,7 @@ const Pizza = (props) => {
       <Link to={`/pizzas`}>
         <Popup content='Go Back' trigger={<Button icon="angle left" color="blue" />} />
       </Link>
-      
+
       <p>id: {props.match.params.id}</p>
     </div>
   );

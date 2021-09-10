@@ -55,9 +55,3 @@ const handleSubmit = async (e) => {
 };
 
 export default PizzaEdit;
-
-//hi
-// lee
-
-// wht
-// sydney

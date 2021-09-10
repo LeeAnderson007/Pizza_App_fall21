@@ -6,15 +6,21 @@ const Pizza = (props) => {
   return (
     <div>
       <h1>Pizza</h1>
+      <Button.Group>
       <Link to={`/pizzas`}>
         <Button color="blue">Go Back</Button>
       </Link>
-      <Link to={`/api/pizzas/:pizza_id/toppings`}>
+      <Link to={`/toppings`}>
         <Button color="blue">Toppings</Button>
       </Link>
       <p>id: {props.match.params.id}</p>
+      </Button.Group>
     </div>
   );
 };
 
 export default Pizza;
+
+{/* <Link to={`/pizzas/${p.id}/toppings`}>
+<Button color="blue" />
+</Link> */}

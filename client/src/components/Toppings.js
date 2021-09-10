@@ -31,26 +31,25 @@ const Toppings = (props) => {
   const renderToppings = () => {
     return toppings.map((t) => {
       return (
-          <Card>
-            <Card.Content header={t.name} />
-            <Card.Content header={t.category} />
-            <Button.Group basic centered vertical>
-              <Link to={`/toppings/${t.id}/edit`}>
-                <Button icon>
-                  <Popup content='Add' trigger={<Icon name="edit" color="blue" />} />
-                </Button>
-              </Link>
-              <Button.Group>
-                <Button icon>
-                  <Popup content='Delete' trigger={<Icon name='trash' color="red" background="red" onClick={() => deleteTopping(t.id)} />} />
-                </Button>
-              </Button.Group>
+        <Card>
+          <Card.Content header={t.name} />
+          <Card.Content header={t.category} />
+          <Button.Group basic centered vertical>
+            <Link to={`/toppings/${t.id}/edit`}>
+              <Button icon>
+                <Popup content='Add' trigger={<Icon name="edit" color="blue" />} />
+              </Button>
+            </Link>
+            <Button.Group>
+              <Button icon>
+                <Popup content='Delete' trigger={<Icon name='trash' color="red" background="red" onClick={() => deleteTopping(t.id)} />} />
+              </Button>
             </Button.Group>
-          </Card>
+          </Button.Group>
+        </Card>
       );
     });
   };
-
 
   return (
     <div>
